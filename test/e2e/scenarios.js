@@ -4,6 +4,7 @@
 
 describe('PhoneCat App', function() {
 
+<<<<<<< HEAD
   it('should redirect index.html to index.html#/phones', function() {
     browser.get('app/index.html');
     browser.getLocationAbsUrl().then(function(url) {
@@ -20,15 +21,37 @@ describe('PhoneCat App', function() {
 
 
     it('should filter the phone list as user types into the search box', function() {
+=======
+    describe('Phone list view', function() {
+
+      beforeEach(function() {
+        browser.get('app/index.html');
+      });
+>>>>>>> d33454
 
       var phoneList = element.all(by.repeater('phone in phones'));
       var query = element(by.model('query'));
 
+<<<<<<< HEAD
       expect(phoneList.count()).toBe(20);
+=======
+      it('should filter the phone list as user types into the search box', function() {
+        expect(phoneList.count()).toBe(3);
 
-      query.sendKeys('nexus');
-      expect(phoneList.count()).toBe(1);
+        query.sendKeys('nexus');
+        expect(phoneList.count()).toBe(1);
 
+        query.clear();
+        query.sendKeys('motorola');
+        expect(phoneList.count()).toBe(2);
+      });
+>>>>>>> d33454
+
+      it('should display the current filter value in the title bar', function() {
+        query.clear();
+        expect(browser.getTitle()).toMatch(/Google Phone Gallery:\s*$/);
+
+<<<<<<< HEAD
       query.clear();
       query.sendKeys('motorola');
       expect(phoneList.count()).toBe(8);
@@ -96,6 +119,10 @@ describe('PhoneCat App', function() {
 
       element(by.css('.phone-thumbs li:nth-child(1) img')).click();
       expect(element(by.css('img.phone.active')).getAttribute('src')).toMatch(/img\/phones\/nexus-s.0.jpg/);
+=======
+        query.sendKeys('nexus');
+        expect(browser.getTitle()).toMatch(/Google Phone Gallery: nexus$/);
+      });
+>>>>>>> d33454
     });
   });
-});
