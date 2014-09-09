@@ -1,0 +1,426 @@
+[1mdiff --git a/app/css/animations.css b/app/css/animations.css[m
+[1mdeleted file mode 100644[m
+[1mindex 46f3da6..0000000[m
+[1m--- a/app/css/animations.css[m
+[1m+++ /dev/null[m
+[36m@@ -1,97 +0,0 @@[m
+[31m-/*[m
+[31m- * animations css stylesheet[m
+[31m- */[m
+[31m-[m
+[31m-/* animate ngRepeat in phone listing */[m
+[31m-[m
+[31m-.phone-listing.ng-enter,[m
+[31m-.phone-listing.ng-leave,[m
+[31m-.phone-listing.ng-move {[m
+[31m-  -webkit-transition: 0.5s linear all;[m
+[31m-  -moz-transition: 0.5s linear all;[m
+[31m-  -o-transition: 0.5s linear all;[m
+[31m-  transition: 0.5s linear all;[m
+[31m-}[m
+[31m-[m
+[31m-.phone-listing.ng-enter,[m
+[31m-.phone-listing.ng-move {[m
+[31m-  opacity: 0;[m
+[31m-  height: 0;[m
+[31m-  overflow: hidden;[m
+[31m-}[m
+[31m-[m
+[31m-.phone-listing.ng-move.ng-move-active,[m
+[31m-.phone-listing.ng-enter.ng-enter-active {[m
+[31m-  opacity: 1;[m
+[31m-  height: 120px;[m
+[31m-}[m
+[31m-[m
+[31m-.phone-listing.ng-leave {[m
+[31m-  opacity: 1;[m
+[31m-  overflow: hidden;[m
+[31m-}[m
+[31m-[m
+[31m-.phone-listing.ng-leave.ng-leave-active {[m
+[31m-  opacity: 0;[m
+[31m-  height: 0;[m
+[31m-  padding-top: 0;[m
+[31m-  padding-bottom: 0;[m
+[31m-}[m
+[31m-[m
+[31m-/* cross fading between routes with ngView */[m
+[31m-[m
+[31m-.view-container {[m
+[31m-  position: relative;[m
+[31m-}[m
+[31m-[m
+[31m-.view-frame.ng-enter,[m
+[31m-.view-frame.ng-leave {[m
+[31m-  background: white;[m
+[31m-  position: absolute;[m
+[31m-  top: 0;[m
+[31m-  left: 0;[m
+[31m-  right: 0;[m
+[31m-}[m
+[31m-[m
+[31m-.view-frame.ng-enter {[m
+[31m-  -webkit-animation: 0.5s fade-in;[m
+[31m-  -moz-animation: 0.5s fade-in;[m
+[31m-  -o-animation: 0.5s fade-in;[m
+[31m-  animation: 0.5s fade-in;[m
+[31m-  z-index: 100;[m
+[31m-}[m
+[31m-[m
+[31m-.view-frame.ng-leave {[m
+[31m-  -webkit-animation: 0.5s fade-out;[m
+[31m-  -moz-animation: 0.5s fade-out;[m
+[31m-  -o-animation: 0.5s fade-out;[m
+[31m-  animation: 0.5s fade-out;[m
+[31m-  z-index: 99;[m
+[31m-}[m
+[31m-[m
+[31m-@keyframes fade-in {[m
+[31m-  from { opacity: 0; }[m
+[31m-  to { opacity: 1; }[m
+[31m-}[m
+[31m-@-moz-keyframes fade-in {[m
+[31m-  from { opacity: 0; }[m
+[31m-  to { opacity: 1; }[m
+[31m-}[m
+[31m-@-webkit-keyframes fade-in {[m
+[31m-  from { opacity: 0; }[m
+[31m-  to { opacity: 1; }[m
+[31m-}[m
+[31m-[m
+[31m-@keyframes fade-out {[m
+[31m-  from { opacity: 1; }[m
+[31m-  to { opacity: 0; }[m
+[31m-}[m
+[31m-@-moz-keyframes fade-out {[m
+[31m-  from { opacity: 1; }[m
+[31m-  to { opacity: 0; }[m
+[31m-}[m
+[31m-@-webkit-keyframes fade-out {[m
+[31m-  from { opacity: 1; }[m
+[31m-  to { opacity: 0; }[m
+[31m-}[m
+[31m-[m
+[1mdiff --git a/app/css/app.css b/app/css/app.css[m
+[1mindex 951ea08..e8d83bc 100644[m
+[1m--- a/app/css/app.css[m
+[1m+++ b/app/css/app.css[m
+[36m@@ -4,96 +4,3 @@[m [mbody {[m
+   padding-top: 20px;[m
+ }[m
+ [m
+[31m-[m
+[31m-.phone-images {[m
+[31m-  background-color: white;[m
+[31m-  width: 450px;[m
+[31m-  height: 450px;[m
+[31m-  overflow: hidden;[m
+[31m-  position: relative;[m
+[31m-  float: left;[m
+[31m-}[m
+[31m-[m
+[31m-.phones {[m
+[31m-  list-style: none;[m
+[31m-}[m
+[31m-[m
+[31m-.thumb {[m
+[31m-  float: left;[m
+[31m-  margin: -0.5em 1em 1.5em 0;[m
+[31m-  padding-bottom: 1em;[m
+[31m-  height: 100px;[m
+[31m-  width: 100px;[m
+[31m-}[m
+[31m-[m
+[31m-.phones li {[m
+[31m-  clear: both;[m
+[31m-  height: 115px;[m
+[31m-  padding-top: 15px;[m
+[31m-}[m
+[31m-[m
+[31m-/** Detail View **/[m
+[31m-img.phone {[m
+[31m-  float: left;[m
+[31m-  margin-right: 3em;[m
+[31m-  margin-bottom: 2em;[m
+[31m-  background-color: white;[m
+[31m-  padding: 2em;[m
+[31m-  height: 400px;[m
+[31m-  width: 400px;[m
+[31m-  display: none;[m
+[31m-}[m
+[31m-[m
+[31m-img.phone:first-child {[m
+[31m-  display: block;[m
+[31m-}[m
+[31m-[m
+[31m-[m
+[31m-ul.phone-thumbs {[m
+[31m-  margin: 0;[m
+[31m-  list-style: none;[m
+[31m-}[m
+[31m-[m
+[31m-ul.phone-thumbs li {[m
+[31m-  border: 1px solid black;[m
+[31m-  display: inline-block;[m
+[31m-  margin: 1em;[m
+[31m-  background-color: white;[m
+[31m-}[m
+[31m-[m
+[31m-ul.phone-thumbs img {[m
+[31m-  height: 100px;[m
+[31m-  width: 100px;[m
+[31m-  padding: 1em;[m
+[31m-}[m
+[31m-[m
+[31m-ul.phone-thumbs img:hover {[m
+[31m-  cursor: pointer;[m
+[31m-}[m
+[31m-[m
+[31m-[m
+[31m-ul.specs {[m
+[31m-  clear: both;[m
+[31m-  margin: 0;[m
+[31m-  padding: 0;[m
+[31m-  list-style: none;[m
+[31m-}[m
+[31m-[m
+[31m-ul.specs > li{[m
+[31m-  display: inline-block;[m
+[31m-  width: 200px;[m
+[31m-  vertical-align: top;[m
+[31m-}[m
+[31m-[m
+[31m-ul.specs > li > span{[m
+[31m-  font-weight: bold;[m
+[31m-  font-size: 1.2em;[m
+[31m-}[m
+[31m-[m
+[31m-ul.specs dt {[m
+[31m-  font-weight: bold;[m
+[31m-}[m
+[31m-[m
+[31m-h1 {[m
+[31m-  border-bottom: 1px solid gray;[m
+[31m-}[m
+[1mdiff --git a/app/index.html b/app/index.html[m
+[1mindex ad6c2d9..9026345 100644[m
+[1m--- a/app/index.html[m
+[1m+++ b/app/index.html[m
+[36m@@ -1,28 +1,28 @@[m
+ <!doctype html>[m
+[31m-<html lang="en" ng-app="phonecatApp">[m
+[32m+[m[32m<html lang="en" ng-app>[m
+ <head>[m
+   <meta charset="utf-8">[m
+   <title>Google Phone Gallery</title>[m
+   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">[m
+   <link rel="stylesheet" href="css/app.css">[m
+[31m-  <link rel="stylesheet" href="css/animations.css">[m
+[31m-[m
+[31m-  <script src="bower_components/jquery/jquery.js"></script>[m
+   <script src="bower_components/angular/angular.js"></script>[m
+[31m-  <script src="bower_components/angular-animate/angular-animate.js"></script>[m
+[31m-  <script src="bower_components/angular-route/angular-route.js"></script>[m
+[31m-  <script src="bower_components/angular-resource/angular-resource.js"></script>[m
+[31m-  <script src="js/app.js"></script>[m
+[31m-  <script src="js/animations.js"></script>[m
+[31m-  <script src="js/controllers.js"></script>[m
+[31m-  <script src="js/filters.js"></script>[m
+[31m-  <script src="js/services.js"></script>[m
+ </head>[m
+ <body>[m
+ [m
+[31m-  <div class="view-container">[m
+[31m-    <div ng-view class="view-frame"></div>[m
+[31m-  </div>[m
+[31m-[m
+[32m+[m[32m  <ul>[m
+[32m+[m[32m    <li>[m
+[32m+[m[32m      <span>Nexus S</span>[m
+[32m+[m[32m      <p>[m
+[32m+[m[32m        Fast just got faster with Nexus S.[m
+[32m+[m[32m      </p>[m
+[32m+[m[32m    </li>[m
+[32m+[m[32m    <li>[m
+[32m+[m[32m      <span>Motorola XOOM™ with Wi-Fi</span>[m
+[32m+[m[32m      <p>[m
+[32m+[m[32m        The Next, Next Generation tablet.[m
+[32m+[m[32m      </p>[m
+[32m+[m[32m    </li>[m
+[32m+[m[32m  </ul>[m
+[32m+[m[32m  <p>Number of phones: 2</p>[m
+ </body>[m
+ </html>[m
+[1mdiff --git a/app/js/animations.js b/app/js/animations.js[m
+[1mdeleted file mode 100644[m
+[1mindex 8f34042..0000000[m
+[1m--- a/app/js/animations.js[m
+[1m+++ /dev/null[m
+[36m@@ -1,52 +0,0 @@[m
+[31m-var phonecatAnimations = angular.module('phonecatAnimations', ['ngAnimate']);[m
+[31m-[m
+[31m-phonecatAnimations.animation('.phone', function() {[m
+[31m-[m
+[31m-  var animateUp = function(element, className, done) {[m
+[31m-    if(className != 'active') {[m
+[31m-      return;[m
+[31m-    }[m
+[31m-    element.css({[m
+[31m-      position: 'absolute',[m
+[31m-      top: 500,[m
+[31m-      left: 0,[m
+[31m-      display: 'block'[m
+[31m-    });[m
+[31m-[m
+[31m-    jQuery(element).animate({[m
+[31m-      top: 0[m
+[31m-    }, done);[m
+[31m-[m
+[31m-    return function(cancel) {[m
+[31m-      if(cancel) {[m
+[31m-        element.stop();[m
+[31m-      }[m
+[31m-    };[m
+[31m-  }[m
+[31m-[m
+[31m-  var animateDown = function(element, className, done) {[m
+[31m-    if(className != 'active') {[m
+[31m-      return;[m
+[31m-    }[m
+[31m-    element.css({[m
+[31m-      position: 'absolute',[m
+[31m-      left: 0,[m
+[31m-      top: 0[m
+[31m-    });[m
+[31m-[m
+[31m-    jQuery(element).animate({[m
+[31m-      top: -500[m
+[31m-    }, done);[m
+[31m-[m
+[31m-    return function(cancel) {[m
+[31m-      if(cancel) {[m
+[31m-        element.stop();[m
+[31m-      }[m
+[31m-    };[m
+[31m-  }[m
+[31m-[m
+[31m-  return {[m
+[31m-    addClass: animateUp,[m
+[31m-    removeClass: animateDown[m
+[31m-  };[m
+[31m-});[m
+[1mdiff --git a/app/js/app.js b/app/js/app.js[m
+[1mindex a58955c..7a8f274 100644[m
+[1m--- a/app/js/app.js[m
+[1m+++ b/app/js/app.js[m
+[36m@@ -1,28 +1,3 @@[m
+ 'use strict';[m
+ [m
+ /* App Module */[m
+[31m-[m
+[31m-var phonecatApp = angular.module('phonecatApp', [[m
+[31m-  'ngRoute',[m
+[31m-  'phonecatAnimations',[m
+[31m-[m
+[31m-  'phonecatControllers',[m
+[31m-  'phonecatFilters',[m
+[31m-  'phonecatServices'[m
+[31m-]);[m
+[31m-[m
+[31m-phonecatApp.config(['$routeProvider',[m
+[31m-  function($routeProvider) {[m
+[31m-    $routeProvider.[m
+[31m-      when('/phones', {[m
+[31m-        templateUrl: 'partials/phone-list.html',[m
+[31m-        controller: 'PhoneListCtrl'[m
+[31m-      }).[m
+[31m-      when('/phones/:phoneId', {[m
+[31m-        templateUrl: 'partials/phone-detail.html',[m
+[31m-        controller: 'PhoneDetailCtrl'[m
+[31m-      }).[m
+[31m-      otherwise({[m
+[31m-        redirectTo: '/phones'[m
+[31m-      });[m
+[31m-  }]);[m
+[1mdiff --git a/app/js/controllers.js b/app/js/controllers.js[m
+[1mindex c8ecfbb..d314a33 100644[m
+[1m--- a/app/js/controllers.js[m
+[1m+++ b/app/js/controllers.js[m
+[36m@@ -1,22 +1,3 @@[m
+ 'use strict';[m
+ [m
+ /* Controllers */[m
+[31m-[m
+[31m-var phonecatControllers = angular.module('phonecatControllers', []);[m
+[31m-[m
+[31m-phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone',[m
+[31m-  function($scope, Phone) {[m
+[31m-    $scope.phones = Phone.query();[m
+[31m-    $scope.orderProp = 'age';[m
+[31m-  }]);[m
+[31m-[m
+[31m-phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Phone',[m
+[31m-  function($scope, $routeParams, Phone) {[m
+[31m-    $scope.phone = Phone.get({phoneId: $routeParams.phoneId}, function(phone) {[m
+[31m-      $scope.mainImageUrl = phone.images[0];[m
+[31m-    });[m
+[31m-[m
+[31m-    $scope.setImage = function(imageUrl) {[m
+[31m-      $scope.mainImageUrl = imageUrl;[m
+[31m-    }[m
+[31m-  }]);[m
+[1mdiff --git a/app/js/filters.js b/app/js/filters.js[m
+[1mindex 4f62309..85e8440 100644[m
+[1m--- a/app/js/filters.js[m
+[1m+++ b/app/js/filters.js[m
+[36m@@ -1,9 +1,3 @@[m
+ 'use strict';[m
+ [m
+ /* Filters */[m
+[31m-[m
+[31m-angular.module('phonecatFilters', []).filter('checkmark', function() {[m
+[31m-  return function(input) {[m
+[31m-    return input ? '\u2713' : '\u2718';[m
+[31m-  };[m
+[31m-});[m
+[1mdiff --git a/app/js/services.js b/app/js/services.js[m
+[1mindex e0b81a8..8207480 100644[m
+[1m--- a/app/js/services.js[m
+[1m+++ b/app/js/services.js[m
+[36m@@ -2,11 +2,3 @@[m
+ [m
+ /* Services */[m
+ [m
+[31m-var phonecatServices = angular.module('phonecatServices', ['ngResource']);[m
+[31m-[m
+[31m-phonecatServices.factory('Phone', ['$resource',[m
+[31m-  function($resource){[m
+[31m-    return $resource('phones/:phoneId.json', {}, {[m
+[31m-      query: {method:'GET', params:{phoneId:'phones'}, isArray:true}[m
+[31m-    });[m
+[31m-  }]);[m
+[1mdiff --git a/app/partials/phone-detail.html b/app/partials/phone-detail.html[m
+[1mdeleted file mode 100644[m
+[1mindex 5fc4da2..0000000[m
+[1m--- a/app/partials/phone-detail.html[m
+[1m+++ /dev/null[m
+[36m@@ -1,118 +0,0 @@[m
+[31m-<div class="phone-images">[m
+[31m-  <img ng-src="{{img}}"[m
+[31m-       class="phone"[m
+[31m-       ng-repeat="img in phone.images"[m
+[31m-       ng-class="{active: mainImageUrl==img}">[m
+[31m-</div>[m
+[31m-[m
+[31m-<h1>{{phone.name}}</h1>[m
+[31m-[m
+[31m-<p>{{phone.description}}</p>[m
+[31m-[m
+[31m-<ul class="phone-thumbs">[m
+[31m-  <li ng-repeat="img in phone.images">[m
+[31m-    <img ng-src="{{img}}" ng-click="setImage(img)">[m
+[31m-  </li>[m
+[31m-</ul>[m
+[31m-[m
+[31m-<ul class="specs">[m
+[31m-
