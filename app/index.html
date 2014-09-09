@@ -19,7 +19,7 @@
         Sort by:
         <select ng-model="orderProp">
           <option value="name">Alphabetical</option>
-          <option value="age">Newest</option>
+          <option value="-age">Newest</option>
         </select>
 
       </div>
@@ -32,8 +32,10 @@
             <p>{{phone.snippet}}</p>
           </li>
         </ul>
-
+    {{orderProp}}
       </div>
+    }
+    }
     </div>
   </div>
 
