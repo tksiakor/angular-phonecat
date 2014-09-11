@@ -152,4 +152,12 @@
         "name": "Motorola CHARM\u2122 with MOTOBLUR\u2122", 
         "snippet": "Motorola CHARM fits easily in your pocket or palm.  Includes MOTOBLUR service."
     }
+    {
+        "age": 20, 
+        "id": "iphone-6-plus", 
+        "imageUrl": "img/phones/iphone6_plus.0.jpg", 
+        "name": "iphone-6-plus\with NFC\u2122", 
+        "snippet": "iPhone 6 Plus is like a mini iPad mini with a sim slot"
+    }
+]
 ]
